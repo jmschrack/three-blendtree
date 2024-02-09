@@ -1,7 +1,7 @@
 {
   "name": "three-blendtree",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple animation blendtree implementation for three.js",
   "main": "BlendTree.js",
   "type": "module",
   "scripts": {
@@ -9,8 +9,11 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["threejs", "animation", "blendtree", "unity", "animation-blendtree", "three.js", "threejs-animation", "threejs-blendtree"],
+  "author": "Jonathan Schrack",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmschrack/three-blendtree"},
   "license": "ISC",
   "devDependencies": {
     "lil-gui": "^0.19.1",
