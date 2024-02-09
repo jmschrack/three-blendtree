@@ -76,11 +76,14 @@ export class BlendTree2D {
                 action.syncWith(this.actions[i - 1]);
             }
             action.play();
-
+            if(this.thresholds[i].x==0&&this.thresholds[i].y==0){
+                this.thresholds[i].x=Number.EPSILON;
+            }
         })
     }
     calculateInfluenceVectors(){
         this.pipj=this.thresholds.map((pi,i)=>{
+            
             return this.thresholds.map((pj,j)=>{
                 if(i==j) return null;
                 return this._convertToInfluenceVector(pi,pj);
