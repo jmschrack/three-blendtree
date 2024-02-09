@@ -14,6 +14,8 @@ In your update method, call the updateWeights method with some value.  Anything 
 Optionally specify true/false for an overdrive parameter. For values greater than the last threshold, the timescale of the last animation will be scaled up to match.  
 
 ```
+import { BlendTree1D } from 'three-blendtree';
+...
 loader.load( 'some_model_with_animations.glb', function ( gltf ) {
     scene.add( gltf.scene );
     mixer = new THREE.AnimationMixer( gltf.scene );
