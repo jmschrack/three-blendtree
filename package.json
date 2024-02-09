@@ -9,11 +9,21 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "keywords": ["threejs", "animation", "blendtree", "unity", "animation-blendtree", "three.js", "threejs-animation", "threejs-blendtree"],
+  "keywords": [
+    "threejs",
+    "animation",
+    "blendtree",
+    "unity",
+    "animation-blendtree",
+    "three.js",
+    "threejs-animation",
+    "threejs-blendtree"
+  ],
   "author": "Jonathan Schrack",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jmschrack/three-blendtree"},
+    "url": "git+https://github.com/jmschrack/three-blendtree.git"
+  },
   "license": "ISC",
   "devDependencies": {
     "lil-gui": "^0.19.1",
