@@ -1,7 +1,13 @@
-//import { AnimationAction } from "three";
+
 
 export class BlendTree1D {
-    constructor(actions, thresholds, overdrive = true) {
+    /**
+     * NB: This also calls syncWith on the actions
+     * @param {AnimationAction[]} actions 
+     * @param {number[]} thresholds 
+     * @param {boolean} overdrive Scale the timescale of the last animation to match values greater than the last threshold
+     */
+    constructor(actions, thresholds, overdrive = false) {
         /** @type {AnimationAction[]} */
         this.actions = actions;
         /** @type {number[]} */
@@ -13,7 +19,6 @@ export class BlendTree1D {
             action.play();
 
         })
-        this.t = 0;
         this.overdrive = overdrive;
     }
     updateWeights(value) {

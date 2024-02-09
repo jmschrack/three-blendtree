@@ -1,6 +1,6 @@
 {
   "name": "three-blendtree",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple animation blendtree implementation for three.js",
   "main": "BlendTree.js",
   "type": "module",
