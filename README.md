@@ -1,6 +1,8 @@
 Just a simple Blendtree implementation similar to Unity's Blendtrees.
 Currently only supports 1 Dimensional blend trees.
 
+![Sample Animation](anim.gif)
+
 # Install
 
 `npm install three three-blendtree`

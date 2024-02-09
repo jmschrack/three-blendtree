@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { BlendTree1D } from './BlendTree';
+import { BlendTree1D } from './src/BlendTree';
 import GUI from 'lil-gui'; 
 
 const gui = new GUI();
@@ -10,7 +10,8 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 const light=new THREE.AmbientLight( 0xf0f0f0 ); // soft white light
-scene.add( light );
+const dirLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
+scene.add( light,dirLight );
 
 const loader = new GLTFLoader();
 
@@ -43,14 +44,16 @@ const myObject={
     idleWeight:0,
     walkingWeight:0,
     runWeight:0,
-    t:0
+    t:0,
+    overdive:false
 }
 
 gui.add( myObject, 'speed' ,0,5); 
+gui.add( myObject, 'overdive' );
 gui.add( myObject, 'idleWeight' );
 gui.add( myObject, 'walkingWeight' );
 gui.add( myObject, 'runWeight' );
-gui.add(myObject,'t');
+
 
 const clock = new THREE.Clock();
 
@@ -58,7 +61,7 @@ function animate() {
 	requestAnimationFrame( animate );
     const dt = clock.getDelta();
 	if(mixer) mixer.update( dt );
-
+    blendTree.overdrive=myObject.overdive;
     blendTree.updateWeights(myObject.speed);
     
     myObject.idleWeight = animations['idle'].getEffectiveWeight();
